@@ -1,0 +1,134 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%; }
+
+body {
+  font: 16px Helvetica, Arial;
+  color: #f2f2f2; }
+
+main {
+  display: flex;
+  height: 100%;
+  flex-direction: column; }
+
+.form-container, .messages {
+  padding: 20px; }
+
+.form-container {
+  flex: 1;
+  border: 6px solid #1f1f1f;
+  background-color: #1f1f1f;
+  box-shadow: 5px 10px 8px #1f1f1f; }
+  .form-container label {
+    display: block;
+    margin-bottom: 0.5rem; }
+
+.messages {
+  flex: 2;
+  border: 6px solid #1f1f1f; }
+
+input, textarea {
+  display: block;
+  width: 100%;
+  border: 2px solid #1f1f1f;
+  border-radius: 25px;
+  font-size: 0.8rem;
+  padding: 0.8rem;
+  border-style: solid;
+  text-decoration: none; }
+
+textarea {
+  height: 100px; }
+
+form {
+  padding: 3px;
+  margin: 12px auto; }
+  form input[type=submit] {
+    width: auto;
+    padding: 16px 36px 16px 36px;
+    background-color: #0ea1bb;
+    margin-top: 1rem;
+    border-radius: 25px;
+    color: #f2f2f2;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold; }
+  form input[type=submit]:hover {
+    cursor: pointer; }
+
+#messages {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+  #messages li {
+    padding: 5px 10px; }
+  #messages li:nth-child(odd) {
+    background: #eee; }
+
+@media screen and (min-width: 768px) {
+  /* reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; }
+
+  html, body {
+    height: 100%; }
+
+  body {
+    font: 16px Helvetica, Arial; }
+
+  main {
+    display: flex;
+    height: 100%;
+    flex-direction: row; }
+
+  .form-container, .messages {
+    padding: 20px; }
+
+  .form-container {
+    flex: 1;
+    box-shadow: 5px 10px 8px #1f1f1f; }
+    .form-container label {
+      display: block;
+      margin-bottom: 0.5rem; }
+
+  .messages {
+    flex: 2;
+    background-image: url("../public/images/background.jpg"); }
+
+  textarea {
+    height: 135px; }
+
+  #messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; }
+    #messages li {
+      padding: 5px 10px; }
+    #messages li:nth-child(odd) {
+      background: #eee; } }
+.new-message {
+  width: 45%;
+  padding: 8px 12px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  float: left;
+  clear: both; }
+  .new-message span {
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 2px; }
+
+.my-message {
+  float: right !important;
+  background-color: #0ea1bb;
+  color: white; }
+
+/*# sourceMappingURL=main.css.map */
