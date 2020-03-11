@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Socket IO Chat with Node!</title>
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://unpkg.com/vue"></script>
+</head>
+
+<body>
+	<main id="app">
+		<section class="form-container">
+			<label for="nickname">Your Code Name <small>(optional)</small></label>
+			<input type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
+
+			<form>
+				<label for="message">Your Message</label>
+				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea" placeholder="Let's solve this bug!"></textarea>
+				<input @click.prevent="dispatchMessage" type="submit">
+			</form>
+		</section>
+
+		<section class="messages">
+			<ul id="messages" >
+				<!-- render a new message component for every message -->
+				<newmessage :msg="message" v-for="message in messages"></newmessage>
+			</ul>
+		</section>
+	</main>
+	<script src="/socket.io/socket.io.js"></script>
+	<script type="module" src="js/main_vm.js"></script>
+</body>
+
+</html>

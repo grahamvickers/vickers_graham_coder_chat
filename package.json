@@ -1,0 +1,15 @@
+{
+  "name": "vanrys_t_chatapp",
+  "version": "1.0.0",
+  "description": "social media app ",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app"
+  },
+  "author": "TVR",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}

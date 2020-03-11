@@ -1,0 +1,18 @@
+.new-message { 
+    span { font-size: 0.8rem; display: block; margin-bottom: 2px; }
+
+    width: 45%;
+    padding: 8px 12px;
+    background-color: #f4f4f4; 
+    border-radius: 8px;
+    margin-bottom: 1rem;
+
+    float:left;
+    clear: both;
+}
+
+.my-message {
+    float: right !important;
+    background-color: rgb(14, 161, 187);
+    color: white;
+}
