@@ -15,6 +15,20 @@ main {
 	height: 100%;
 	flex-direction: column;
 }
+
+header{
+	background-color: #f2f2f2;
+	align-items: center;
+	img{
+		align-items: center;
+		height: 80px;
+		margin: 20px;
+	}
+}
+h3{
+	font: 22px Helvetica, Arial;
+	margin-bottom: 40px;
+}
 .form-container, .messages { padding: 20px; }
 .form-container { 
 	flex: 1; 
@@ -27,7 +41,7 @@ main {
 
 .messages { 
 	flex: 2;
-	//background-color: #3f3f3f;
+	background-color: #3f3f3f;
 	border: 6px solid #1f1f1f; 
 }
 
@@ -41,6 +55,7 @@ input, textarea {
 	padding: 0.8rem; 
 	border-style: solid;
 	text-decoration: none;
+	box-shadow:none;
 }
 
 textarea { height: 100px; }
@@ -100,7 +115,6 @@ form {
 
 	.messages { 
 		flex: 2;
-		background-image: url("../public/images/background.jpg");
 	}
 
 
