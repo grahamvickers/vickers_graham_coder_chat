@@ -24,9 +24,13 @@ const server = app.listen(port, () => {
 io.attach(server);
 
 io.on('connection', function(socket) {
-    console.log('user connected');
-    socket.emit('connected', { sID: `${socket.id}`, message: 'new connection'});
+    console.log('New user connected');
+    socket.emit('connected', { sID: `${socket.id}`, count: io.engine.clientsCount - 1});
 
+    // this will allow users to be notified when a new coder joins
+    message = socket.id;
+    io.emit('new_user', message);
+    
     // listen for an incoming message from a user (socket refers to an individual user)
     // msg is the incoming message from that user
     socket.on('chat_message', function(msg) {
@@ -35,14 +39,21 @@ io.on('connection', function(socket) {
         // when we get a new message, send it to everyone so they see it
         // io is the switchboard operator, making sure everyone who's connected
         // gets the messages
-        io.emit('new_message', { id: socket.id, message: msg })
+        io.emit('new_message', {id: socket.id, message: msg})
     })
 
     // listen for a disconnect event
     socket.on('disconnect', function() {
-        console.log('a user disconnected');
+        console.log('User disconnected');
 
-        message = `${socket.id} has left the chat!`;
+        message = `A coder has left the chat!`;
         io.emit('user_disconnect', message);
+    })
+
+    // this will display messages for connections and disconnections
+    socket.on('notification_message', function(msg) {
+        // When we get a new message, send it to everyone so they see it
+        // io is the switchboard operator, making sure everyone who's connected gets the message.
+        socket.emit('new_message', {message: msg});
     })
 })
