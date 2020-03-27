@@ -16,23 +16,29 @@
 	</header>
 	<main id="app">
 		<section class="form-container">
-			<h3>Chat, Connect, and ask for support from thousand of coders around the world!</h3>
+			<h3>Chat, connect, and ask for support from thousand of coders around the world!</h3>
 			<label for="nickname">Your Code Name <small>(optional)</small></label>
-			<input type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
+			<input v-model="nickName" type="text" id="nickname" class="nickname" placeholder="What is your nickname?">
 
 			<form>
 				<label for="message">Your Message</label>
 				<textarea v-model="message" class="message" type="text" autocomplete="off" id="textarea" placeholder="Let's solve this bug!"></textarea>
-				<input @click.prevent="dispatchMessage" type="submit">
+				<input @click.prevent="dispatchMessage" type="submit" value="Send">
 			</form>
+
+			<div>
+				<img id="userIcon" src="images/user.svg" alt="user icon">
+				<p id="userCount">{{userCount}} online</p>
+			</div>
 		</section>
 
 		<section class="messages">
-			<ul id="messages" >
+			<ul id="messages" v-for="message in messages">
 				<!-- render a new message component for every message -->
-				<newmessage :msg="message" v-for="message in messages"></newmessage>
+				<newmessage :msg="message"></newmessage>
 			</ul>
 		</section>
+
 	</main>
 	<script src="/socket.io/socket.io.js"></script>
 	<script type="module" src="js/main_vm.js"></script>
