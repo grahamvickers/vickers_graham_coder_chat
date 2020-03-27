@@ -79,3 +79,6 @@ Now in the browser of your choice go to: localhost:3030
 
 * Thanks to [Trevor](https://github.com/Trevor-FanshaweC) for teaching me how to use vue.js, greensock, and socket.io to complete this project.
 
+## License 
+MIT
+
